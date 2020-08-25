@@ -9,7 +9,9 @@ The answer appears in the answera area. Buttons exist to ask the question and re
 
 If users do not format questions correctly the answers are instead selected from the failedQuestion variable (which uses the 'answer' object constructor).
 
-The object contructor also has a field populated with "moo", "harp" or "intro" which controls wchich sound effect is played just prior to the answer being displayed. 
+The object constructor also has a field populated with "moo", "harp" or "intro" which controls wchich sound effect is played just prior to the answer being displayed. 
 
 "Harp" is bright sound for positive answers, "Intro" is a sound for foreboding answers and "Moo" is for incorrect questions.
+
+I didn't use folders, my bad.
 
