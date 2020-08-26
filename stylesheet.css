@@ -16,9 +16,9 @@ body {
 #header {
     position: relative;
     top:0;
-    margin-top:-40px;
+    margin-top:-24px;
     background-color:#d8bb6f;
-    height:100px;
+    height:80px;
     width:100%;
 }
 
@@ -85,7 +85,7 @@ textarea,
 }
 
 h2 {
-    font-size:48px;
+    font-size:24px;
     color:#423770;
     font-family: besley-hand;
 }
@@ -106,7 +106,7 @@ h2 {
 
 /* Line height to assist with vertically centering text in header */
 .header-textbox {
-    line-height: 100px;
+    line-height: 80px;
 }
 
 /* Line height to assist with vertically centering text in footer */
