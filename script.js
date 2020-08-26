@@ -4,7 +4,6 @@ const QUESTION = document.querySelector("#question-text");
 const RESET = document.querySelector(".reset-button");
 const ASK = document.querySelector(".ask-button");
 const HARP = document.querySelector("#harp");
-const MOO = document.querySelector("#moo");
 const INTRO = document.querySelector("#intro");
 
 // Object constructor which allows for Svetlana's answers to be authored and stored. Type is  acategory that will be used to add more customisation later on.
@@ -15,10 +14,10 @@ function answer(sound, answer) {
 
 // variable holding Svetlana's answers for when somebody is too lazy for question mark
 failedQuestion = [
-    new answer("moo", "Svetlana insists you use question mark properly."),
-    new answer("moo", "No question mark at the end BAD, like KGB visit."),
-    new answer("moo", "Donald Trump's leadership is big question mark. Maybe you should use question mark when ask question."),
-    new answer("moo", "Svetlana says question with no question mark at end is no question."),
+    new answer("intro", "Svetlana insists you use question mark properly."),
+    new answer("intro", "No question mark at the end BAD, like KGB visit."),
+    new answer("intro", "Donald Trump's leadership is big question mark. Maybe you should use question mark when ask question."),
+    new answer("intro", "Svetlana says question with no question mark at end is no question."),
 ]
 
 // variable holding Svetlana's answers to questions
@@ -168,8 +167,6 @@ function decisionBitch() {
         INTRO.play();
     } else if (answerSound == "harp") {
         HARP.play();
-    } else if (answerSound == "moo") {
-        MOO.play();
     };
 
         // function to generate an answer for the customer that plays at the end of the specified audio file.
