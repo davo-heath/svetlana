@@ -152,11 +152,11 @@ function decisionBitch() {
     let questionAsked = QUESTION.value;
 
     // Determinme whether the question asked is valid (true) or not valid (false)
-    let validQuestion = questionAsked.endsWith("?");
+    let validQuestion = questionAsked.indexOf("?");
     console.log(validQuestion);
 
     // Set the value of answerSound to allow the right audio file to be selected. 
-    if (validQuestion == true) {
+    if (validQuestion >= 0) {
         answerSound = fortuneTeller[randomNumber].sound;
     } else {
         answerSound = failedQuestion[noQuestionNumber].sound;
@@ -173,7 +173,7 @@ function decisionBitch() {
         INTRO.onended = function generateAnswer() {
 
             // If/else conditional to choose which array of answers to draw from based on whether the customer correctly asked a question as stored in validQuestion
-            if (validQuestion == true) {
+            if (validQuestion >= 0) {
                 ANSWER.innerHTML = (chosenAnswer);
             } else {
                 ANSWER.innerHTML = (noQuestionAnswer);
@@ -184,27 +184,13 @@ function decisionBitch() {
         HARP.onended = function generateAnswer() {
 
             // If/else conditional to choose which array of answers to draw from based on whether the customer correctly asked a question as stored in validQuestion
-            if (validQuestion == true) {
+            if (validQuestion >= true) {
                 ANSWER.innerHTML = (chosenAnswer);
             } else {
                 ANSWER.innerHTML = (noQuestionAnswer);
             };
 
         };
-
-        MOO.onended = function generateAnswer() {
-
-            // If/else conditional to choose which array of answers to draw from based on whether the customer correctly asked a question as stored in validQuestion
-            if (validQuestion == true) {
-                ANSWER.innerHTML = (chosenAnswer);
-            } else {
-                ANSWER.innerHTML = (noQuestionAnswer);
-            };
-
-        };
-
-    // delayed running of the function to generate an answer so that it feels like Svetlana was thinking
-    // setTimeout(generateAnswer, 1600); 
 
 };
 
@@ -219,13 +205,3 @@ console.log("the function is running!")
 // Event listeners to trigger the appropriate functions when buttons are clicked
 ASK.addEventListener('click', decisionBitch, false);
 RESET.addEventListener('click', reset, false);
-
-//Listen for the completion of a question via the enter key
-
-// Previous function to use enter for asking question. Ended up being not very intuitive.
-
-// QUESTION.addEventListener('keypress', function (e) {
-//     if (e.keyCode == 13) {
-//     decisionBitch();
-//     }
-// }, false);
